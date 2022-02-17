@@ -1,7 +1,6 @@
 import abc
 
 class Transportation(object):
-   """Abstract base class"""
     
       def __init__(self, s, e, d):
         self.start_place = s
@@ -17,19 +16,19 @@ class Transportation(object):
     def find_cost(self):
         pass
 
-class walk(Transportation):
+class Walk(Transportation):
     def __init__(self, s, e, d):
         super().__init__(s, e, d)
     def find_cost(self):
         return 0
  
-class taxi(Transportation):
+class Taxi(Transportation):
     def __init__(self, s, e, d):
         super().__init__(s, e, d)
     def find_cost(self):
         return super().getdistance() * 40
 
-class train(Transportation):
+class Train(Transportation):
     def __init__(self, s, e, d, stop):
         super().__init__(s, e, d)
         self.stop = stop
