@@ -1,25 +1,25 @@
 class Transportation(object):
    """Abstract base class"""
+    
+      def __init__(self, s, e, d):
+        self.start_place = s
+        self.end_place = e
+        self.distance = d
+    def getstart(self):
+        return self.start_place
+    def getend(self):
+        return self.end_place
+    def getdistance(self):
+        return self.distance
+    @abc.abstractmethod
+    def find_cost(self):
+        pass
 
-   def __init__( self, start, end, distance ):
-      if self.__class__ == Transportation:
-         raise NotImplementedError
-      self.start = start
-      self.end = end
-      self.distance = distance
-
-   def find_cost( self ):
-      """Abstract method; derived classes must override"""
-      raise NotImplementedError
-
-
-class Walk( Transportation ):
-
-   def __init__( self, start, end, distance ):
-      Transportation.__init__( self, start, end, distance)
-
-   def find_cost( self ):
-      return 0
+class walk(Transportation):
+    def __init__(self, s, e, d):
+        super().__init__(s, e, d)
+    def find_cost(self):
+        return 0
 
 
    
