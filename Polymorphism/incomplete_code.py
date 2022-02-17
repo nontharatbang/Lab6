@@ -2,7 +2,7 @@ import abc
 
 class Transportation(object):
     
-      def __init__(self, s, e, d):
+    def __init__(self, s, e, d):
         self.start_place = s
         self.end_place = e
         self.distance = d
@@ -46,4 +46,4 @@ trip = [ Walk("KMITL","KMITL SCB Bank",0.6),
 
 for travel in trip:
    travel_cost += travel.find_cost()
-print travel_cost
+print(travel_cost)
